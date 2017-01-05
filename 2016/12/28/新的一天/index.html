@@ -3,14 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>新的一天 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="这是新的一天，我用hexo创建了第一篇文章。
+通过下面的命令，就可以创建新文章123$ hexo new 新的一天INFO Created: ~/blog/source/_posts/新的一天.md$
+这种感觉非常好dhsh。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="新的一天">
+<meta property="og:url" content="http://yoursite.com/2016/12/28/新的一天/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="这是新的一天，我用hexo创建了第一篇文章。
+通过下面的命令，就可以创建新文章123$ hexo new 新的一天INFO Created: ~/blog/source/_posts/新的一天.md$
+这种感觉非常好dhsh。">
+<meta property="og:updated_time" content="2017-01-05T13:23:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="新的一天">
+<meta name="twitter:description" content="这是新的一天，我用hexo创建了第一篇文章。
+通过下面的命令，就可以创建新文章123$ hexo new 新的一天INFO Created: ~/blog/source/_posts/新的一天.md$
+这种感觉非常好dhsh。">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,78 +69,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-angularJs" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/05/angularJs/" class="article-date">
-  <time datetime="2017-01-05T13:35:23.000Z" itemprop="datePublished">2017-01-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/05/angularJs/">angularJs</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="angularJs的纪录"><a href="#angularJs的纪录" class="headerlink" title="angularJs的纪录"></a><center>angularJs的纪录</center></h1><h3 id="angular-router"><a href="#angular-router" class="headerlink" title="angular router"></a>angular router</h3><p>在angular路由中我们有时需要根据路由动态配置对应的controller，比如</p>
-<pre>
-$stateProvider
-    .state('foo', {
-        url: '/foo/:bar',
-        templateUrl: 'some-template-path.html',
-        resolve : {
-            getController : function($stateParams){
-                if ($stateParams.bar === "tab1") {
-
-                    return "tab1Controller"
-
-                }else if ($stateParams.bar === "tab2") {
-
-                    return "tab2Controller"
-
-                }else if ($stateParams.bar === "tab3"){
-
-                    return "tab3Controller"
-
-                }else if ($stateParams.bar === "tab4") {
-
-                    return "tab4Controller"
-
-                }
-            }
-        },
-        controllerProvider: function(getController){
-            return getController;
-        }
- </pre>
-
-<p> 也可以用这样的方式：<br> <pre><br>     $stateProvider<br>        .state(“/Dashboards/:dashboardName”,{<br>               templateUrl:function($stateParams) {<br>                 return “Dashboards/“ + $stateParams.dashboardName;<br>               },<br>               controllerProvider: function($stateParams) {<br>                 return $stateParams.dashboardName+”Controller”;<br>               }<br>      })<br> </pre><br> <a href="http://stackoverflow.com/questions/18423054/dynamically-loading-the-controller-in-angularjs-routeprovider" target="_blank" rel="external">具体细节可以参考这里</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/05/angularJs/" data-id="cixkfby8d00011mp0dsjrz7sk" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-新的一天" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-新的一天" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/12/28/新的一天/" class="article-date">
   <time datetime="2016-12-28T07:20:20.000Z" itemprop="datePublished">2016-12-28</time>
@@ -143,8 +82,8 @@ $stateProvider
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/28/新的一天/">新的一天</a>
+    <h1 class="article-title" itemprop="name">
+      新的一天
     </h1>
   
 
@@ -167,10 +106,23 @@ $stateProvider
     </footer>
   </div>
   
-</article>
-
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/05/angularJs/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          angularJs
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
   
+</article>
 
 </section>
         
