@@ -3,36 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>angularJs | Hexo</title>
+  <title>angular事件传播 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="angularJs的纪录angular router在angular路由中我们有时需要根据路由动态配置对应的controller，比如
-
-$stateProvider
-    .state(&apos;foo&apos;, {
-        url: &apos;/foo/:bar&apos;,
-        templateUrl: &apos;some-template-path.html&apos;,
-        resolve : {">
+  <meta name="description" content="angular提供了$emit，$broadcast，$on服务用于scope之间的交流$emit$emit是由子scope往rootScope传播事件，向上分发事件。语法为：
+$scope.$emit(eventName,data);
+$broadcast$broadcast事件是父级scope往子scope传播，向下广播事件。语法为：
+$scope.$broadcast(eventName,d">
 <meta property="og:type" content="article">
-<meta property="og:title" content="angularJs">
-<meta property="og:url" content="http://yoursite.com/2017/01/05/angularJs/index.html">
+<meta property="og:title" content="angular事件传播">
+<meta property="og:url" content="http://yoursite.com/2017/01/07/angular事件传播/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="angularJs的纪录angular router在angular路由中我们有时需要根据路由动态配置对应的controller，比如
-
-$stateProvider
-    .state(&apos;foo&apos;, {
-        url: &apos;/foo/:bar&apos;,
-        templateUrl: &apos;some-template-path.html&apos;,
-        resolve : {">
-<meta property="og:updated_time" content="2017-01-06T16:20:10.000Z">
+<meta property="og:description" content="angular提供了$emit，$broadcast，$on服务用于scope之间的交流$emit$emit是由子scope往rootScope传播事件，向上分发事件。语法为：
+$scope.$emit(eventName,data);
+$broadcast$broadcast事件是父级scope往子scope传播，向下广播事件。语法为：
+$scope.$broadcast(eventName,d">
+<meta property="og:updated_time" content="2017-01-06T16:46:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="angularJs">
-<meta name="twitter:description" content="angularJs的纪录angular router在angular路由中我们有时需要根据路由动态配置对应的controller，比如
-
-$stateProvider
-    .state(&apos;foo&apos;, {
-        url: &apos;/foo/:bar&apos;,
-        templateUrl: &apos;some-template-path.html&apos;,
-        resolve : {">
+<meta name="twitter:title" content="angular事件传播">
+<meta name="twitter:description" content="angular提供了$emit，$broadcast，$on服务用于scope之间的交流$emit$emit是由子scope往rootScope传播事件，向上分发事件。语法为：
+$scope.$emit(eventName,data);
+$broadcast$broadcast事件是父级scope往子scope传播，向下广播事件。语法为：
+$scope.$broadcast(eventName,d">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -81,10 +72,10 @@ $stateProvider
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-angularJs" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-angular事件传播" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/01/05/angularJs/" class="article-date">
-  <time datetime="2017-01-05T13:35:23.000Z" itemprop="datePublished">2017-01-05</time>
+    <a href="/2017/01/07/angular事件传播/" class="article-date">
+  <time datetime="2017-01-06T16:21:11.000Z" itemprop="datePublished">2017-01-07</time>
 </a>
     
   </div>
@@ -95,7 +86,7 @@ $stateProvider
         
   
     <h1 class="article-title" itemprop="name">
-      angularJs
+      angular事件传播
     </h1>
   
 
@@ -103,44 +94,23 @@ $stateProvider
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="angularJs的纪录"><a href="#angularJs的纪录" class="headerlink" title="angularJs的纪录"></a><center>angularJs的纪录</center></h1><h3 id="angular-router"><a href="#angular-router" class="headerlink" title="angular router"></a>angular router</h3><p>在angular路由中我们有时需要根据路由动态配置对应的controller，比如</p>
-<pre>
-$stateProvider
-    .state('foo', {
-        url: '/foo/:bar',
-        templateUrl: 'some-template-path.html',
-        resolve : {
-            getController : function($stateParams){
-                if ($stateParams.bar === "tab1") {
-
-                    return "tab1Controller"
-
-                }else if ($stateParams.bar === "tab2") {
-
-                    return "tab2Controller"
-
-                }else if ($stateParams.bar === "tab3"){
-
-                    return "tab3Controller"
-
-                }else if ($stateParams.bar === "tab4") {
-
-                    return "tab4Controller"
-
-                }
-            }
-        },
-        controllerProvider: function(getController){
-            return getController;
-        }
- </pre>
-
-<p> 也可以用这样的方式：<br> <pre><br>     $stateProvider<br>        .state(“/Dashboards/:dashboardName”,{<br>               templateUrl:function($stateParams) {<br>                 return “Dashboards/“ + $stateParams.dashboardName;<br>               },<br>               controllerProvider: function($stateParams) {<br>                 return $stateParams.dashboardName+”Controller”;<br>               }<br>      })<br> </pre><br> <a href="http://stackoverflow.com/questions/18423054/dynamically-loading-the-controller-in-angularjs-routeprovider" target="_blank" rel="external">具体细节可以参考这里</a></p>
-
+        <h3 id="angular提供了-emit，-broadcast，-on服务用于scope之间的交流"><a href="#angular提供了-emit，-broadcast，-on服务用于scope之间的交流" class="headerlink" title="angular提供了$emit，$broadcast，$on服务用于scope之间的交流"></a><center>angular提供了$emit，$broadcast，$on服务用于scope之间的交流</center></h3><h6 id="emit"><a href="#emit" class="headerlink" title="$emit"></a>$emit</h6><p>$emit是由子scope往rootScope传播事件，向上分发事件。语法为：</p>
+<pre><code>$scope.$emit(eventName,data);
+</code></pre><h6 id="broadcast"><a href="#broadcast" class="headerlink" title="$broadcast"></a>$broadcast</h6><p>$broadcast事件是父级scope往子scope传播，向下广播事件。语法为：</p>
+<pre><code>$scope.$broadcast(eventName,data);
+</code></pre><h6 id="on"><a href="#on" class="headerlink" title="$on"></a>$on</h6><p>$on：监听或接收数据。用于接收向上分发或者是向下广播事件的event与data。语法为</p>
+<pre><code>$scope.$on(eventName,function(event,data){
+        //do sth 
+});
+</code></pre><p>$on的方法中的event事件参数：<br>    event.name 事件名称<br>    event.targetScope  发出或者传播原始事件的作用域<br>    event.currentScope 目前正在处理的事件的作用域</p>
+<pre><code>event.stopPropagation()    一个防止事件进一步传播(冒泡/捕获)的函数(这只适用于使用`$emit`发出的事件)
+event.preventDefault() 这个方法实际上不会做什么事，但是会设置`defaultPrevented`为true。直到事件监听器的实现者采取行动之前它才会检查`defaultPrevented`的值。
+event.defaultPrevented 如果调用了`preventDefault`则为true
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/05/angularJs/" data-id="cixm1bbi100015ajg00ete8bp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/01/07/angular事件传播/" data-id="cixm1bbhx00005ajgp1hpk32i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
@@ -151,19 +121,10 @@ $stateProvider
     
 <nav id="article-nav">
   
-    <a href="/2017/01/05/markdown使用/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          markdown使用
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/12/28/新的一天/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/01/05/markdown使用/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">新的一天</div>
+      <div class="article-nav-title">markdown使用</div>
     </a>
   
 </nav>
