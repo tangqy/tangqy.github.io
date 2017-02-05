@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="title: IOS-UIWebView
+date: 2017-02-05 00:33:34
+tags:IOS
+UIWebView方法：
+｀- (void)loadRequest:(NSURLRequest *)request;｀
+  这是加载网页最常用的一种方式，通过一个网页URL来进行加载，这个URL可以是远程的也可以是本地的；
+  
+  UIWebView * view = [[UIWeb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/02/05/IOS-UIWebView/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="title: IOS-UIWebView
+date: 2017-02-05 00:33:34
+tags:IOS
+UIWebView方法：
+｀- (void)loadRequest:(NSURLRequest *)request;｀
+  这是加载网页最常用的一种方式，通过一个网页URL来进行加载，这个URL可以是远程的也可以是本地的；
+  
+  UIWebView * view = [[UIWeb">
+<meta property="og:updated_time" content="2017-02-04T17:15:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="title: IOS-UIWebView
+date: 2017-02-05 00:33:34
+tags:IOS
+UIWebView方法：
+｀- (void)loadRequest:(NSURLRequest *)request;｀
+  这是加载网页最常用的一种方式，通过一个网页URL来进行加载，这个URL可以是远程的也可以是本地的；
+  
+  UIWebView * view = [[UIWeb">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-IOS-UIWebView" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/05/IOS-UIWebView/" class="article-date">
+  <time datetime="2017-02-04T16:33:34.000Z" itemprop="datePublished">2017-02-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: IOS-UIWebView</p>
+<p>date: 2017-02-05 00:33:34</p>
+<p>tags:IOS</p>
+<h3 id="UIWebView"><a href="#UIWebView" class="headerlink" title="UIWebView"></a>UIWebView</h3><h5 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h5><ul>
+<li><p>｀- (void)loadRequest:(NSURLRequest *)request;｀</p>
+<p>  这是加载网页最常用的一种方式，通过一个网页URL来进行加载，这个URL可以是远程的也可以是本地的；</p>
+  <pre>
+  UIWebView * view = [[UIWebView alloc]initWithFrame:self.view.frame];
+  [view loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
+  [self.view addSubview:view];
+  </pre>
+</li>
+<li><p><code>- (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL;</code></p>
+<p>  这个方法需要将httml文件读取为字符串，其中baseURL是我们自己设置的一个路径，用于寻找html文件中引用的图片等素材。</p>
+</li>
+<li><p><code>- (void)loadData:(NSData *)data MIMEType:(NSString *)MIMEType textEncodingName:(NSString *)textEncodingName baseURL:(NSURL *)baseURL;</code></p>
+<p>  这个方式使用的比较少，但也更加自由，其中data是文件数据，MIMEType是文件类型，textEncodingName是编码类型，baseURL是素材资源路径。</p>
+</li>
+<li><p><code>- (void)reload;//重新加载数据</code></p>
+</li>
+<li><code>- (void)stopLoading;//停止加载数据</code></li>
+<li><code>- (void)goBack;//返回上一级</code></li>
+<li><code>- (void)goForward;//跳转下一级</code></li>
+<li><code>-(NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)script;//通过JavaScript操作web数据</code></li>
+</ul>
+<h5 id="属性："><a href="#属性：" class="headerlink" title="属性："></a>属性：</h5><ul>
+<li><code>@property (nonatomic,assign)id &lt;UIWebViewDelegate&gt; delegate;//设置webView的代理</code></li>
+<li><code>@property (nonatomic,readonly,retain)UIScrollView *scrollView;//内置的scrollView</code></li>
+<li><code>@property (nonatomic,readonly,retain)NSURLRequest *request;//URL请求</code></li>
+<li><code>@property (nonatomic,readonly,getter=canGoBack)BOOL canGoBack;//获取能否返回上一级</code></li>
+<li><code>@property (nonatomic,readonly,getter=canGoForward)BOOL canGoForward;//获取能否跳转下一级</code></li>
+<li><code>@property (nonatomic,readonly,getter=isLoading)BOOL loading;//获取是否正在加载数据</code></li>
+<li><code>@property (nonatomic)BOOL scalesPageToFit;//设置是否缩放到适合屏幕大小</code></li>
+<li><code>@property (nonatomic)UIDataDetectorTypes dataDetectorTypesNS_AVAILABLE_IOS(3_0);设置某些数据变为链接形式，这个枚举可以设置如电话号，地址，邮箱等转化为链接</code></li>
+<li><code>@property (nonatomic)BOOL allowsInlineMediaPlaybackNS_AVAILABLE_IOS(4_0);//设置是否使用内联播放器播放视频</code></li>
+<li><code>@property (nonatomic)BOOL mediaPlaybackRequiresUserActionNS_AVAILABLE_IOS(4_0);//设置视频是否自动播放</code></li>
+<li><code>@property (nonatomic)BOOL mediaPlaybackAllowsAirPlayNS_AVAILABLE_IOS(5_0);//设置音频播放是否支持ari play功能</code></li>
+<li><code>@property (nonatomic)BOOL suppressesIncrementalRenderingNS_AVAILABLE_IOS(6_0);//设置是否将数据加载如内存后渲染界面</code></li>
+<li><code>@property (nonatomic)BOOL keyboardDisplayRequiresUserActionNS_AVAILABLE_IOS(6_0);//设置用户交互模式</code></li>
+</ul>
+<h5 id="ios-7-0新特性："><a href="#ios-7-0新特性：" class="headerlink" title="ios 7.0新特性："></a>ios 7.0新特性：</h5><p>下面这些属性是iOS7之后才有的，通过他们可以设置更加有趣的web体验</p>
+<ul>
+<li><p><code>@property (nonatomic)UIWebPaginationMode paginationModeNS_AVAILABLE_IOS(7_0);</code></p>
+</li>
+<li><pre>typedef NS_ENUM(NSInteger, UIWebPaginationMode) { 
+      UIWebPaginationModeUnpaginated,//不使用翻页效果
+         UIWebPaginationModeLeftToRight,//将网页超出部分分页，从左向右进行翻页
+      UIWebPaginationModeTopToBottom,//将网页超出部分分页，从上向下进行翻页
+      UIWebPaginationModeBottomToTop,//将网页超出部分分页，从下向上进行翻页
+      UIWebPaginationModeRightToLeft//将网页超出部分分页，从右向左进行翻页
+  };
+  </pre>
+
+</li>
+</ul>
+<p>这个属性用来设置一种模式，当网页的大小超出view时，将网页以翻页的效果展示，枚举如下：<br><pre>@property (nonatomic)CGFloat pageLengthNS_AVAILABLE_IOS(7_0);//设置每一页的长度<br>@property (nonatomic)CGFloat gapBetweenPagesNS_AVAILABLE_IOS(7_0);//设置每一页的间距<br>@property (nonatomic,readonly)NSUInteger pageCountNS_AVAILABLE_IOS(7_0);//获取分页数</pre></p>
+<h5 id="webView协议中的方法"><a href="#webView协议中的方法" class="headerlink" title="webView协议中的方法"></a>webView协议中的方法</h5><pre>- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
+//准备加载内容时调用的方法，通过返回值来进行是否加载的设置
+- (void)webViewDidStartLoad:(UIWebView *)webView;//开始加载时调用的方法
+- (void)webViewDidFinishLoad:(UIWebView *)webView;//结束加载时调用的方法
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;//加载失败时调用的方法
+</pre>
+
+<h5 id="UIWebView保存图片"><a href="#UIWebView保存图片" class="headerlink" title="UIWebView保存图片;"></a><a href="http://www.cocoachina.com/ios/20160616/16660.html" target="_blank" rel="external">UIWebView保存图片</a>;</h5>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/05/IOS-UIWebView/" data-id="ciys1ttia0000iijihzetl4ic" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/01/24/ios-study/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ios-study</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/第一天/">第一天</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/angular/" style="font-size: 20px;">angular</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/第一天/" style="font-size: 10px;">第一天</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/02/05/IOS-UIWebView/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/24/ios-study/">ios-study</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/20/设计模式学习/">设计模式学习</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/16/web-record/">web_record.md</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/07/angular事件传播/">angular事件传播</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Tang QY<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
